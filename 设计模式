@@ -18,3 +18,27 @@ public class SingletonDemoOne {
 }
 ```
 
+第二种 
+
+```java
+public class SingletonDemoTwo {
+    private static volatile  SingletonDemoTwo singletonDemoTwo;
+
+    //必须私有
+    private SingletonDemoTwo() {
+
+    }
+
+    public static SingletonDemoTwo getSingletonDemo() {
+        if (singletonDemoTwo == null) {
+            synchronized (SingletonDemoTwo.class) {
+                if(singletonDemoTwo == null){
+                    singletonDemoTwo = new SingletonDemoTwo();
+                }
+            }
+        }
+        return singletonDemoTwo;
+    }
+}
+```
+
