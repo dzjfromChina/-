@@ -1,0 +1,20 @@
+# 单例模式
+
+第一种   缺点在于如果没有使用到就很浪费资源
+
+```java
+public class SingletonDemoOne {
+
+    private static final SingletonDemoOne singletonDemoOne = new SingletonDemoOne();
+
+    //必须私有
+    private SingletonDemoOne(){
+
+    }
+
+    public  static  SingletonDemoOne getSingletonDemo(){
+        return singletonDemoOne;
+    }
+}
+```
+
